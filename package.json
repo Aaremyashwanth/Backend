@@ -2,7 +2,7 @@
   "name": "food-management",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "Server.js",
   "scripts": {
     "dev": "nodemon run dev",
     "start": "node Server"
