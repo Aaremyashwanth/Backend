@@ -21,9 +21,7 @@ app.use(bodyParser.json())
 // }
 // )
 connectDB()
-app.use('/',(req,res)=>{
-    res.send("Hello Backend")
-})
+
   app.use('/register',signup)
   app.use('/firm',firmrouter)
   app.use('/product',productrouter)
@@ -33,4 +31,7 @@ app.use('/',(req,res)=>{
 app.listen(PORT,()=>{
     console.log("port is connected");
     
+})
+app.use('/',(req,res)=>{
+  res.send("Hello Backend")
 })
