@@ -6,11 +6,12 @@ const signup=require('./Routers/Router')
 const firmrouter=require('./Routers/firm/firmrouter')
 const productrouter=require('./Routers/product/productrouter')
 const bodyParser = require('body-parser')
+const Path=require('path')
 
 dotenv.config()
 
 const app=express()
-const Port=process.env.Port||5000
+const PORT=process.env.PORT||5000
 app.use(bodyParser.json())
 
 // mongoose.connect(process.env.MongoUrl).then(()=>{
@@ -26,10 +27,10 @@ app.use('/',(req,res)=>{
   app.use('/register',signup)
   app.use('/firm',firmrouter)
   app.use('/product',productrouter)
-
+  app.use('/uploads',express.static('uploads'))
   
 
-app.listen(Port,()=>{
+app.listen(PORT,()=>{
     console.log("port is connected");
     
 })
