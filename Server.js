@@ -10,7 +10,7 @@ const bodyParser = require('body-parser')
 dotenv.config()
 
 const app=express()
-const port=5000
+const Port=process.env.Port||5000
 app.use(bodyParser.json())
 
 // mongoose.connect(process.env.MongoUrl).then(()=>{
@@ -20,8 +20,8 @@ app.use(bodyParser.json())
 // }
 // )
 connectDB()
-app.use('/home',(req,res)=>{
-    res.send("hello home")
+app.use('/',(req,res)=>{
+    res.send("Hello Backend")
 })
   app.use('/register',signup)
   app.use('/firm',firmrouter)
